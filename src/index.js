@@ -1,5 +1,5 @@
 class baseballGame {
-    player=[];
+    player= [];
     answer = [];
     strike = 0;
     ball = 0;
@@ -35,6 +35,16 @@ class baseballGame {
         }
     }
 }
+
 const game = new baseballGame();
 
 game.randomNumber(3);
+
+
+const inputNum = document.querySelectorAll('.number');
+const trial = document.querySelector('.trial');
+const reset = document.querySelector('.reset');
+
+inputNum.addEventListener('input', e => {
+    console.log()
+})
