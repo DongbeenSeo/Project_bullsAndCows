@@ -41,10 +41,12 @@ const game = new baseballGame();
 game.randomNumber(3);
 
 
-const inputNum = document.querySelectorAll('.number');
+const inputNums = document.querySelectorAll('.number');
 const trial = document.querySelector('.trial');
 const reset = document.querySelector('.reset');
 
-inputNum.addEventListener('input', e => {
-    console.log()
+console.log(inputNums);
+
+inputNums.addEventListener('input', e => {
+    // forEach()
 })
