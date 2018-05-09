@@ -28,11 +28,21 @@ h1 {
   .trial{
     width: 80px;
     height: $numHeight;
-    margin-left: 30px;
+    margin-left: 20px;
+    background-color: blue;
+
+    .trial__string{
+      color: white;
+    }
   }
   .reset{
     width: 80px;
     height: $numHeight;
-    margin-left: 0px;
+    margin-left: 20px;
+    background-color: blue;
+    
+    .reset__string{
+      color: white;
+    }
   }
 }

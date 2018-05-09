@@ -1,6 +1,7 @@
 class baseballGame {
+    player=[];
     answer = [];
-    strike = 1;
+    strike = 0;
     ball = 0;
 
     randomNumber(n) {
