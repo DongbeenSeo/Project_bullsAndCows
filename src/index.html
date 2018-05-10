@@ -1,98 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>해커톤 템플릿 프로젝트</title>
-  <link rel="stylesheet" href="./index.scss">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>해커톤 템플릿 프로젝트</title>
+    <link rel="stylesheet" href="./index.scss">
 </head>
+
 <body>
-  <h1>숫자야구</h1>
-  <div class="container">
-    <input type="text" class="number">
-    <input type="text" class="number">
-    <input type="text" class="number">
+    <h1>숫자야구</h1>
+    <div class="container">
+        <input type="text" class="number">
+        <input type="text" class="number">
+        <input type="text" class="number">
 
-    <button class="trial"><span class="trial__string">시도</span></button>
-    <button class="reset"><span class="reset__string">다시시작</span></button>
-    
-  </div>
+        <button type="submit" value="시도" class="trial"><span class="trial__string">시도</span></button>
+        <button class="reset"><span class="reset__string">다시시작</span></button>
 
-  <div class="display">
-    <div class="round">
-      <div class="round__count">1회</div>
-      <div class="round__display"></div>
-      <div class="round__display"></div>
-      <div class="round__display"></div>
-      <div class="round__result"></div>
     </div>
-    <div class="round">
-      <div class="round__count">2회</div>
-      <div class="round__display"></div>
-      <div class="round__display"></div>
-      <div class="round__display"></div>
-      <div class="round__result"></div>
-      
+
+    <div class="display">
+        <div class="round">
+            <div class="round__count"></div>
+            <div class="round__display"></div>
+            <div class="round__display"></div>
+            <div class="round__display"></div>
+            <div class="round__result"></div>
+        </div>
+        <div class="round__answer">
+            정답은 <span class="final_answer"></span> 입니다.
+        </div>
     </div>
-    <div class="round">
-      <div class="round__count">3회</div>
-      <div class="round__display"></div>
-      <div class="round__display"></div>
-      <div class="round__display"></div>
-      <div class="round__result"></div>
-      
-    </div>
-    <div class="round">
-      <div class="round__count">4회</div>
-      <div class="round__display"></div>
-      <div class="round__display"></div>
-      <div class="round__display"></div>
-      <div class="round__result"></div>
-      
-    </div>
-    <div class="round">
-      <div class="round__count">5회</div>
-      <div class="round__display"></div>
-      <div class="round__display"></div>
-      <div class="round__display"></div>
-      <div class="round__result"></div>
-      
-    </div>
-    <div class="round">
-      <div class="round__count">6회</div>
-      <div class="round__display"></div>
-      <div class="round__display"></div>
-      <div class="round__display"></div>
-    </div>
-    <div class="round">
-      <div class="round__count">7회</div>
-      <div class="round__display"></div>
-      <div class="round__display"></div>
-      <div class="round__display"></div>
-    </div>
-    <div class="round">
-      <div class="round__count">8회</div>
-      <div class="round__display"></div>
-      <div class="round__display"></div>
-      <div class="round__display"></div>
-      <div class="round__result"></div>
-      
-    </div>
-    <div class="round">
-      <div class="round__count">9회</div>
-      <div class="round__display"></div>
-      <div class="round__display"></div>
-      <div class="round__display"></div>
-      <div class="round__result"></div>
-      
-    </div>
-    <div class="round">
-      <div class="round__answer">
-        정답은 <span class="final_answer"></span> 입니다.
-      </div>
-    </div>
-  </div>
-  <script src="./index.js"></script>
+    <script src="./index.js"></script>
 </body>
+
 </html>
