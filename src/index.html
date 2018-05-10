@@ -12,9 +12,9 @@
 <body>
     <h1>숫자야구</h1>
     <div class="container">
-        <input type="text" class="number">
-        <input type="text" class="number">
-        <input type="text" class="number">
+        <input type="text" class="number" onkeypress="onlyNumber()" maxlength=1>
+        <input type="text" class="number" onkeypress="onlyNumber()" maxlength=1>
+        <input type="text" class="number" onkeypress="onlyNumber()" maxlength=1>
 
         <button type="submit" value="시도" class="trial"><span class="trial__string">시도</span></button>
         <button class="reset"><span class="reset__string">다시시작</span></button>
@@ -29,11 +29,17 @@
             <div class="round__display"></div>
             <div class="round__result"></div>
         </div>
-        <div class="round__answer">
-            정답은 <span class="final_answer"></span> 입니다.
-        </div>
+    </div>
+    <div class="round__answer">
+        정답은 <span class="final_answer"></span> 입니다.
     </div>
     <script src="./index.js"></script>
+    <script>
+        function onlyNumber() {
+            if ((event.keyCode < 48) || (event.keyCode > 57))
+                event.returnValue = false;
+        }
+    </script>
 </body>
 
 </html>

@@ -45,31 +45,48 @@ const displayEl = document.querySelector('.display');
 const round__countEl = document.querySelector('.round__count');
 const round__displayEls = document.querySelectorAll('.round__display');
 const round__resultEl = document.querySelector('.round__result');
+const round__answerEl = document.querySelector('.round__answer');
 const final__answerEl = document.querySelector('.final_answer');
 
 init();
 console.log(game.answer);
+let state = false;
 
 inputEls.forEach((el, index) => {
     el.addEventListener('input', e => {
         game.player[index] = e.target.value;
         console.log(game.player);
+        if (e.returnValue) {
+            console.log(el.nextElementSibling);
+            el.nextElementSibling.focus();
+        }
     })
+    state = false;
 })
 
 trialEl.addEventListener('click', e => {
     displayEl.style.display = 'contents'
     if (cnt <= 8) {
+        inputEls.forEach((el, index) => {
+            el.value = '';
+        })
+        inputEls[0].focus();
         round__countEl.textContent = `${++cnt}회차`;
         round__displayEls.forEach((el, index) => {
             el.textContent = game.player[index];
         })
         game.check();
-        round__resultEl.textContent = `${game.strike} S ${game.ball} B`
+        if (game.strike === 0 && game.ball === 0) {
+            round__resultEl.textContent = 'OUT';
+        } else {
+            round__resultEl.textContent = `${game.strike} S ${game.ball} B`
+        }
         game.strike = 0, game.ball = 0;
     } else {
-        final__answerEl.textContent = game.answer;
+        resetEl.focus();
+        final__answerEl.textContent = ` ${game.answer} `;
         document.querySelector('.trial').disabled = true;
+        round__answerEl.style.display = 'flex';
     }
 })
 
@@ -97,4 +114,5 @@ function init() {
     game.strike = 0;
     game.ball = 0;
     displayEl.style.display = 'none';
+    round__answerEl.style.display = 'none'
 }
