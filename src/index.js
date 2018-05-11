@@ -84,7 +84,7 @@ trialEl.addEventListener('click', e => {
         game.strike = 0, game.ball = 0;
     } else {
         resetEl.focus();
-        final__answerEl.textContent = ` ${game.answer} `;
+        final__answerEl.textContent = `${game.answer[0]}   ${game.answer[1]}   ${game.answer[2]}`;
         document.querySelector('.trial').disabled = true;
         round__answerEl.style.display = 'flex';
     }
@@ -102,6 +102,7 @@ resetEl.addEventListener('click', e => {
     inputEls.forEach((el, index) => {
         el.value = '';
     })
+    inputEls[0].focus();
     round__countEl.textContent = '';
     round__resultEl.textContent = '';
     final__answerEl.textContent = '';

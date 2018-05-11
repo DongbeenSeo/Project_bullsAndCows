@@ -10,32 +10,39 @@
 </head>
 
 <body>
-    <div class="forCss">
-    <div class="text"><h1><span class="bull">Bulls</span> and <span class="cow">Cows</span></h1></div>
-    <div class="container">
-        <input type="text" class="number" onkeypress="onlyNumber()" maxlength=1>
-        <input type="text" class="number" onkeypress="onlyNumber()" maxlength=1>
-        <input type="text" class="number" onkeypress="onlyNumber()" maxlength=1>
+    <div class="main">
+        <div class="text">
+            <h1><span class="bull">Bulls</span> and <span class="cow">Cows</span></h1>
+        </div>
+        <div class="container">
+            <input type="text" class="number" onkeypress="onlyNumber()" maxlength=1>
+            <input type="text" class="number" onkeypress="onlyNumber()" maxlength=1>
+            <input type="text" class="number" onkeypress="onlyNumber()" maxlength=1>
 
-        <button type="submit" value="시도" class="trial"><span class="trial__string">Try</span></button>
-        <button class="reset"><span class="reset__string">Reset</span></button>
+            <button type="submit" value="시도" class="trial"><span class="trial__string">Try</span></button>
+            <button class="reset"><span class="reset__string">Reset</span></button>
 
-    </div>
+        </div>
 
-    <div class="display">
-        <div class="round">
-            <div class="round__count"></div>
-            <div class="round__display"></div>
-            <div class="round__display"></div>
-            <div class="round__display"></div>
-            <div class="round__result"></div>
+        <div class="display">
+            <div class="round">
+                <div class="round__count"></div>
+                <div class="round__display"></div>
+                <div class="round__display"></div>
+                <div class="round__display"></div>
+                <div class="round__result"></div>
+            </div>
+            <div class="round__answer">
+                <span class="additional_text">Answer is</span>
+                <span class="final_answer"></span>
+            </div>
         </div>
     </div>
-    <div class="round__answer">
-        정답은  <span class="final_answer"></span> 입니다.
-    </div>
-    </div>
-    <img  id="img" src="./action-1850887_1280.jpg" alt="baseball"  width="1147px" height="335px">
+    <footer class="footer">
+        <div class="image">
+            <img id="img" src="./action-1850887_1280.jpg" alt="background image">
+        </div>
+    </footer>
     <script src="./index.js"></script>
     <script>
         function onlyNumber() {

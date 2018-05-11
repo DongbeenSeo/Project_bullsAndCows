@@ -1,43 +1,53 @@
 $main-color: white;
 $numWidth: 60px;
 $numHeight: 60px;
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: $main-color;
     font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
 }
-.text{
+
+.text {
     font-size: 35px;
     margin-bottom: 50px;
-    .bull{
-        color:blue;
+    .bull {
+        color: blue;
         display: inline-block;
-        margin-right:20px;
+        margin-right: 20px;
     }
-    .cow{
-        color:red;
+    .cow {
+        color: red;
         display: inline-block;
         margin-left: 20px;
     }
 }
 
-.forCss{
-    background-color:#ffcccc;
+.main {
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .3);
+    background: rgb(238, 139, 194);
+    background: radial-gradient(ellipse at center, rgb(210, 230, 235) 0%, rgb(127, 169, 208) 100%);
     padding: 30px;
+    height: 280px;
 }
 
 h1 {
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
-    
 }
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
-
+    margin-bottom: 30px;
     .number {
         width: $numWidth;
         height: $numHeight;
@@ -45,11 +55,12 @@ h1 {
         margin-right: 30px;
         border-radius: 5px;
         font-size: 30px;
+        text-align: center;
+        vertical-align: middle;
     }
-    .number:focus{
+    .number:focus {
         transform: rotate(20deg);
     }
-    
     .trial {
         width: 100px;
         height: $numHeight;
@@ -62,25 +73,23 @@ h1 {
             font-size: 18px;
         }
     }
-    .trial:hover{
+    .trial:hover {
         background-color: #cc8800;
         transform: rotate(20deg);
         width: 120px;
         height: 70px;
-        .trial__string{
+        .trial__string {
             color: #181818;
             font-weight: 900;
             font-size: 20px;
         }
     }
-
-    .trial:focus{
-        background-color: #cc8800;        
+    .trial:focus {
+        background-color: #cc8800;
         transform: rotate(20deg);
         width: 100px;
         height: 70px;
-        
-        .trial__string{
+        .trial__string {
             color: #181818;
             font-weight: 900;
             font-size: 20px;
@@ -91,36 +100,33 @@ h1 {
         height: $numHeight;
         margin-left: 20px;
         background-color: #ff8533;
-        border-radius: 10px;    
+        border-radius: 10px;
         transition: width 1s;
         .reset__string {
             color: #fff;
             font-size: 18px;
-            
         }
     }
-    .reset:hover{
+    .reset:hover {
         background-color: #cc8800;
         transform: rotate(-20deg);
         width: 120px;
         height: 70px;
-        
-        .reset__string{
+        .reset__string {
             color: #cc0000;
             font-weight: 900;
             font-size: 20px;
         }
     }
-    .reset:focus{
+    .reset:focus {
         background-color: #cc8800;
         transform: rotate(-20deg);
         width: 100px;
         height: 70px;
-        
-        .reset__string{
+        .reset__string {
             color: #cc0000;
             font-weight: 900;
-            font-size: 20px;            
+            font-size: 20px;
         }
     }
 }
@@ -129,27 +135,51 @@ h1 {
     .round {
         display: flex;
         justify-content: center;
-        margin-top: 20px;
+        margin-top: 5px;
         &__count {
             margin-right: 20px;
-            line-height: 100%;
+            // background: red;
+            padding-top: 5px
         }
         &__display {
             width: 30px;
             height: 30px;
             border: 1px solid black;
+            line-height: 30px;
+            vertical-align: middle;
+            text-align: center;
             margin: 0px 10px 0px 10px;
+            // padding-left: 5px;
+        }
+        &__result {
+            padding-top: 5px;
+            // background: red;
+        }
+        &__answer {
+            justify-content: center;
+            text-align: center;
+            vertical-align: middle;
+            // line-height: 30px;
+            padding: 10px 0 0 10px;
+            // background: red;
         }
     }
 }
 
-.round__answer {
-    // display: flex;
-    justify-content: center;
-    margin-top: 20px;
+.additional_answer {
+    display: inline-block;
+    // margin-right: 100px;
 }
 
-// #img{
-//     width:850px;
-//     // height:;
-// }
+.final_answer {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.footer {}
+
+.image img {
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+}
