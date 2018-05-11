@@ -7,7 +7,7 @@ body {
 }
 .text{
     font-size: 35px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     .bull{
         color:blue;
         display: inline-block;
@@ -36,7 +36,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 
     .number {
         width: $numWidth;
@@ -44,7 +44,7 @@ h1 {
         border: 1px solid #181818;
         margin-right: 30px;
         border-radius: 5px;
-        font-size: 25px;
+        font-size: 30px;
     }
     .number:focus{
         transform: rotate(20deg);
