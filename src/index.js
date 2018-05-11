@@ -71,7 +71,7 @@ trialEl.addEventListener('click', e => {
             el.value = '';
         })
         inputEls[0].focus();
-        round__countEl.textContent = `${++cnt}회차`;
+        round__countEl.textContent = `${++cnt} Round`;
         round__displayEls.forEach((el, index) => {
             el.textContent = game.player[index];
         })

@@ -10,14 +10,15 @@
 </head>
 
 <body>
-    <h1>숫자야구</h1>
+    <div class="forCss">
+    <div class="text"><h1><span class="bull">Bulls</span> and <span class="cow">Cows</span></h1></div>
     <div class="container">
         <input type="text" class="number" onkeypress="onlyNumber()" maxlength=1>
         <input type="text" class="number" onkeypress="onlyNumber()" maxlength=1>
         <input type="text" class="number" onkeypress="onlyNumber()" maxlength=1>
 
-        <button type="submit" value="시도" class="trial"><span class="trial__string">시도</span></button>
-        <button class="reset"><span class="reset__string">다시시작</span></button>
+        <button type="submit" value="시도" class="trial"><span class="trial__string">Try</span></button>
+        <button class="reset"><span class="reset__string">Reset</span></button>
 
     </div>
 
@@ -31,8 +32,10 @@
         </div>
     </div>
     <div class="round__answer">
-        정답은 <span class="final_answer"></span> 입니다.
+        정답은  <span class="final_answer"></span> 입니다.
     </div>
+    </div>
+    <img  id="img" src="./action-1850887_1280.jpg" alt="baseball"  width="1147px" height="400px">
     <script src="./index.js"></script>
     <script>
         function onlyNumber() {
