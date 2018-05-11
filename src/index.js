@@ -68,32 +68,35 @@ trialEl.addEventListener('click', e => {
             el.value = '';
         })
         inputEls[0].focus();
-        
+
         game.strike = 0, game.ball = 0;
     } else {
         resetEl.focus();
         final__answerEl.textContent = `${game.answer[0]}   ${game.answer[1]}   ${game.answer[2]}`;
         document.querySelector('.trial').disabled = true;
         round__answerEl.style.display = 'flex';
+        game.strike = 0, game.ball = 0;
     }
-        round__countEl.textContent = `${++cnt} Round`;
-        round__displayEls.forEach((el, index) => {
-            el.textContent = game.player[index];
-        })
-        game.check();
-        if (game.strike === 0 && game.ball === 0) {
-            round__resultEl.textContent = 'OUT';
-        } else if(game.strike === 3 ) {
-            resetEl.focus();
-            final__answerEl.textContent = `${game.answer[0]}   ${game.answer[1]}   ${game.answer[2]}`;
-            document.querySelector('.trial').disabled = true;
-            round__answerEl.style.display = 'flex';
-            round__resultEl.textContent = `${game.strike} S`
-            
-        } else {
-            round__resultEl.textContent = `${game.strike} S ${game.ball} B`
-        }
-    game.player=[];
+    round__countEl.textContent = `${++cnt} Round`;
+    round__displayEls.forEach((el, index) => {
+        el.textContent = game.player[index];
+    })
+    game.check();
+    console.log(`${game.strike}, ${game.ball}`)
+    if (game.strike === 0 && game.ball === 0) {
+        round__resultEl.textContent = 'OUT';
+    } else if (game.strike === 3) {
+        resetEl.focus();
+        final__answerEl.textContent = `${game.answer[0]}   ${game.answer[1]}   ${game.answer[2]}`;
+        document.querySelector('.trial').disabled = true;
+        round__answerEl.style.display = 'flex';
+        round__resultEl.textContent = `${game.strike} S`
+
+    } else {
+        round__resultEl.textContent = `${game.strike} S ${game.ball} B`
+
+    }
+    game.player = [];
 })
 
 
