@@ -50,37 +50,25 @@ const final__answerEl = document.querySelector('.final_answer');
 
 init();
 console.log(game.answer);
-let state = false;
 
 inputEls.forEach((el, index) => {
     el.addEventListener('input', e => {
         game.player[index] = e.target.value;
-        console.log(game.player);
         if (e.returnValue) {
-            console.log(el.nextElementSibling);
             el.nextElementSibling.focus();
         }
     })
-    state = false;
+    game.player = [];
 })
 
 trialEl.addEventListener('click', e => {
     displayEl.style.display = 'contents'
-    if (cnt <= 8) {
+    if (cnt <= 7) {
         inputEls.forEach((el, index) => {
             el.value = '';
         })
         inputEls[0].focus();
-        round__countEl.textContent = `${++cnt} Round`;
-        round__displayEls.forEach((el, index) => {
-            el.textContent = game.player[index];
-        })
-        game.check();
-        if (game.strike === 0 && game.ball === 0) {
-            round__resultEl.textContent = 'OUT';
-        } else {
-            round__resultEl.textContent = `${game.strike} S ${game.ball} B`
-        }
+        
         game.strike = 0, game.ball = 0;
     } else {
         resetEl.focus();
@@ -88,7 +76,26 @@ trialEl.addEventListener('click', e => {
         document.querySelector('.trial').disabled = true;
         round__answerEl.style.display = 'flex';
     }
+        round__countEl.textContent = `${++cnt} Round`;
+        round__displayEls.forEach((el, index) => {
+            el.textContent = game.player[index];
+        })
+        game.check();
+        if (game.strike === 0 && game.ball === 0) {
+            round__resultEl.textContent = 'OUT';
+        } else if(game.strike === 3 ) {
+            resetEl.focus();
+            final__answerEl.textContent = `${game.answer[0]}   ${game.answer[1]}   ${game.answer[2]}`;
+            document.querySelector('.trial').disabled = true;
+            round__answerEl.style.display = 'flex';
+            round__resultEl.textContent = `${game.strike} S`
+            
+        } else {
+            round__resultEl.textContent = `${game.strike} S ${game.ball} B`
+        }
+    game.player=[];
 })
+
 
 //리셋 버튼 눌렀을 때 
 //게임상태 초기화
